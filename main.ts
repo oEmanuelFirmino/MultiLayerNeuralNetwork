@@ -1,8 +1,8 @@
-import { NeuralNetwork } from "./NeuralNetwork";
-import { NeuralNetworkParams } from "./NeuralNetworkParams.interface";
-import { ActivationFunction } from "./ActivationFunction";
-import { Regularization } from "./Regularization";
-import { MiniBatch } from "./MiniBatch";
+import { NeuralNetwork } from "./src/NeuralNetwork";
+import { NeuralNetworkParams } from "./src/NeuralNetworkParams.interface";
+import { ActivationFunction } from "./src/ActivationFunction";
+import { Regularization } from "./src/Regularization";
+import { MiniBatch } from "./src/MiniBatch";
 
 const input: number[] = [1.0, 2.0, 3.0, 4.0, 5.0];
 const output: number[] = [1.5, 2.0, 3.1, 4.1, 5.6];

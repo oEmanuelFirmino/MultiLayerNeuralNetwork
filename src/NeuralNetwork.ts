@@ -37,7 +37,7 @@ export class NeuralNetwork {
       grad_W += 2 * output[i] * (input[i] - prediction);
     }
 
-    return (grad_W+= regularization(weight, lambda)) / n;
+    return (grad_W += regularization(weight, lambda)) / n;
   }
 
   static async compute_grad_B(
