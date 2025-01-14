@@ -1,4 +1,3 @@
-// MiniBatch.ts
 export class MiniBatch {
   private input: number[];
   private output: number[];

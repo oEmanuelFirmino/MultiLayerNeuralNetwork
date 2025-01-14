@@ -1,4 +1,3 @@
-// main.ts
 import { NeuralNetwork } from "./NeuralNetwork";
 import { NeuralNetworkParams } from "./NeuralNetworkParams.interface";
 import { ActivationFunction } from "./ActivationFunction";
@@ -17,7 +16,7 @@ const data: NeuralNetworkParams = {
   bias
 };
 
-const eta: number = 0.01;
+const eta: number = 0.0001;
 const epochs: number = 1000;
 const lambda: number = 0.01;
 const miniBatchSize: number = 2;
