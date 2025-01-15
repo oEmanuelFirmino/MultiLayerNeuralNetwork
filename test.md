@@ -5,50 +5,65 @@ A TypeScript implementation of a neural network using mini-batch gradient descen
 ## Mathematical Foundation
 
 ### 1. Network Architecture
-The neural network is structured with multiple layers, where each layer l performs the following transformation:
+The neural network is structured with multiple layers, where each layer \(l\) performs the following transformation:
 
-z^(l) = W^(l)a^(l-1) + b^(l)
+$z^{(l)}=W^{(l)}a^{(l-1)}+b^{(l)}$
+
 
 Where:
-- z^(l) is the weighted input to layer l
-- W^(l) is the weight matrix for layer l
-- a^(l-1) is the activation from the previous layer
-- b^(l) is the bias vector for layer l
+- $z^{(l)}$ is the weighted input to layer $(l)$
+- $W^{(l)}$ is the weight matrix for layer $(l)$
+- $a^{(l-1)}$ is the activation from the previous layer
+- $b^{(l)}$ is the bias vector for layer $(l)$
 
 ### 2. Activation Functions
 The implementation supports multiple activation functions:
 
 #### Sigmoid
-σ(x) = 1/(1 + e^(-x))
-- Range: (0,1)
+
+$\sigma(x) = \frac{1}{1 + e^{-x}}$
+
+- Range: $(0,1)$
 - Used in hidden layers and binary classification output
-- Derivative: σ(x)(1 - σ(x))
+- Derivative: $(\sigma(x)(1 - \sigma(x))$
 
 #### ReLU (Rectified Linear Unit)
-f(x) = max(0,x)
-- Range: [0,∞)
+
+$f(x) = \max(0,x)$
+
+- Range: $[0,\infty)$
 - Helps prevent vanishing gradient problem
-- Derivative: 1 if x > 0, 0 otherwise
+- Derivative: $(1)$ $if$ $(x > 0)$, $(0)$ otherwise
 
 #### Softmax (for output layer)
-softmax(x_i) = e^(x_i)/Σ(e^(x_j))
+
+$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum e^{x_j}}$
+
 - Used for multi-class classification
 - Outputs sum to 1, representing probabilities
 
 ### 3. Loss Function and Regularization
 
 #### Mean Squared Error (MSE)
-L = (1/n)Σ(y - ŷ)²
-- n: number of samples
-- y: true value
-- ŷ: predicted value
+
+$L = \frac{1}{n}\sum (y - \hat{y})^2$
+
+- $(n)$: number of samples
+- $(y)$: true value
+- $(\hat{y})$: predicted value
 
 #### Regularization Terms
-L2 Regularization: λ/2m Σ||W||²
-L1 Regularization: λ/m Σ|W|
-- λ: regularization strength
-- m: mini-batch size
-- W: weights
+L2 Regularization:
+
+$\frac{\lambda}{2m} \sum ||W||^2$
+
+L1 Regularization:
+
+$\frac{\lambda}{m} \sum |W|$
+
+- $(\lambda)$: regularization strength
+- $(m)$: mini-batch size
+- $(W)$: weights
 
 ## Implementation Details
 
@@ -180,8 +195,8 @@ class CustomRegularization extends Regularization {
    - Recommended: Start with 0.01 and adjust
 
 3. **Regularization Strength**
-   - Increase λ to reduce overfitting
-   - Decrease λ if underfitting
+   - Increase \(\lambda\) to reduce overfitting
+   - Decrease \(\lambda\) if underfitting
 
 ## Contributing
 
@@ -194,3 +209,4 @@ class CustomRegularization extends Regularization {
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
