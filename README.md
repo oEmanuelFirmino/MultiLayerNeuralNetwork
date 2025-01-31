@@ -1,4 +1,4 @@
-Neural Network Implementation with Mini-Batch Gradient Descent
+# Neural Network Implementation with Mini-Batch Gradient Descent
 A TypeScript implementation of a neural network using mini-batch gradient descent optimization, featuring customizable activation functions, regularization techniques, and model persistence.
 Mathematical Foundation
 1. Network Architecture
