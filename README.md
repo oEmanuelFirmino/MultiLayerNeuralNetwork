@@ -1,54 +1,53 @@
-# Neural Network Implementation with Mini-Batch Gradient Descent
-
+Neural Network Implementation with Mini-Batch Gradient Descent
 A TypeScript implementation of a neural network using mini-batch gradient descent optimization, featuring customizable activation functions, regularization techniques, and model persistence.
-
-## Mathematical Foundation
-
-### 1. Network Architecture
+Mathematical Foundation
+1. Network Architecture
 The neural network is structured with multiple layers, where each layer l performs the following transformation:
-
-z^(l) = W^(l)a^(l-1) + b^(l)
-
+$z^{(l)} = W^{(l)}a^{(l-1)} + b^{(l)}$
 Where:
-- z^(l) is the weighted input to layer l
-- W^(l) is the weight matrix for layer l
-- a^(l-1) is the activation from the previous layer
-- b^(l) is the bias vector for layer l
 
-### 2. Activation Functions
+$z^{(l)}$ is the weighted input to layer l
+$W^{(l)}$ is the weight matrix for layer l
+$a^{(l-1)}$ is the activation from the previous layer
+$b^{(l)}$ is the bias vector for layer l
+
+2. Activation Functions
 The implementation supports multiple activation functions:
+Sigmoid
+$\sigma(x) = \frac{1}{1 + e^{-x}}$
 
-#### Sigmoid
-σ(x) = 1/(1 + e^(-x))
-- Range: (0,1)
-- Used in hidden layers and binary classification output
-- Derivative: σ(x)(1 - σ(x))
+Range: $(0,1)$
+Used in hidden layers and binary classification output
+Derivative: $\sigma(x)(1 - \sigma(x))$
 
-#### ReLU (Rectified Linear Unit)
-f(x) = max(0,x)
-- Range: [0,∞)
-- Helps prevent vanishing gradient problem
-- Derivative: 1 if x > 0, 0 otherwise
+ReLU (Rectified Linear Unit)
+$f(x) = \max(0,x)$
 
-#### Softmax (for output layer)
-softmax(x_i) = e^(x_i)/Σ(e^(x_j))
-- Used for multi-class classification
-- Outputs sum to 1, representing probabilities
+Range: $[0,\infty)$
+Helps prevent vanishing gradient problem
+Derivative: $1$ if $x > 0$, $0$ otherwise
 
-### 3. Loss Function and Regularization
+Softmax (for output layer)
+$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_j e^{x_j}}$
 
-#### Mean Squared Error (MSE)
-L = (1/n)Σ(y - ŷ)²
-- n: number of samples
-- y: true value
-- ŷ: predicted value
+Used for multi-class classification
+Outputs sum to 1, representing probabilities
 
-#### Regularization Terms
-L2 Regularization: λ/2m Σ||W||²
-L1 Regularization: λ/m Σ|W|
-- λ: regularization strength
-- m: mini-batch size
-- W: weights
+3. Loss Function and Regularization
+Mean Squared Error (MSE)
+$L = \frac{1}{n}\sum(y - \hat{y})^2$
+
+$n$: number of samples
+$y$: true value
+$\hat{y}$: predicted value
+
+Regularization Terms
+L2 Regularization: $\frac{\lambda}{2m} \sum |W|^2$
+L1 Regularization: $\frac{\lambda}{m} \sum |W|$
+
+$\lambda$: regularization strength
+$m$: mini-batch size
+$W$: weights
 
 ## Implementation Details
 
